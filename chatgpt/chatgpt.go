@@ -16,7 +16,7 @@ func NewChat(text string) string {
 	token := os.Getenv("OPENAI_API_KEY")
 
 	client := req.C().DevMode().
-		SetUserAgent("airdb-bot/v1").
+		SetUserAgent(UserAgent).
 		SetTimeout(30 * time.Second)
 
 	r := &OpenAIReq{
