@@ -2,10 +2,10 @@ package chatgpt
 
 const (
 	// Text
-	ModelTextDavinci = "text-davinci-003"
-	ModelTextCurie   = "text-curie-001"
-	ModelTextBabbage = "text-babbage-001"
-	ModelTextAda     = "text-ada-001"
+	ModelTextDavinci003 = "text-davinci-003"
+	ModelTextCurie001   = "text-curie-001"
+	ModelTextBabbage001 = "text-babbage-001"
+	ModelTextAda001     = "text-ada-001"
 
 	// CodeX
 	ModeCodeDavinic  = "code-davinic-002"

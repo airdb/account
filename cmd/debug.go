@@ -29,7 +29,8 @@ to quickly create a Cobra application.`,
 			log.Fatal("Error loading .env file")
 		}
 
-		chatgpt.NewChat("hello")
+		question := "写一篇2000字的自我介绍"
+		chatgpt.NewChat(question)
 	},
 }
 

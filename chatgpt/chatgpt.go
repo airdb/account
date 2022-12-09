@@ -25,7 +25,7 @@ func NewChat(text string) string {
 		TopP:             1,
 		FrequencyPenalty: 0,
 		PresencePenalty:  0,
-		Model:            "text-davinci-003",
+		Model:            ModelTextDavinci003,
 		Prompt:           text,
 	}
 
