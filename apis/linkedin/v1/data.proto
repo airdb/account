@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package linkedin.v1;
+
+// Represents a LinkedIn user profile
+message LinkedInUser {
+  string id = 1;                    // LinkedIn member ID
+  string first_name = 2;            // User's first name
+  string last_name = 3;             // User's last name
+  string email = 4;                 // User's email address
+  string profile_picture_url = 5;   // URL to profile picture
+  string headline = 6;              // Professional headline
+  string industry = 7;              // Industry the user works in
+  string public_profile_url = 8;    // URL to public LinkedIn profile
+}
+

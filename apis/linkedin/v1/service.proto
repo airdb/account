@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package linkedin.v1;
+
+// Import path should be relative to the proto root
+import "linkedin/v1/data.proto";
+
+service LinkedInOAuth {
+  // Initiates the OAuth flow and returns the authorization URL
+  rpc GetAuthorizationURL(GetAuthorizationURLRequest) returns (GetAuthorizationURLResponse) {}
+  
+  // Exchanges the authorization code for access token
+  rpc ExchangeCode(ExchangeCodeRequest) returns (ExchangeCodeResponse) {}
+  
+  // Gets the authenticated user's profile information
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {}
+}
+
+message GetAuthorizationURLRequest {
+  string redirect_uri = 1;
+  string state = 2;
+  repeated string scopes = 3;
+}
+
+message GetAuthorizationURLResponse {
+  string authorization_url = 1;
+}
+
+message ExchangeCodeRequest {
+  string code = 1;
+  string redirect_uri = 2;
+}
+
+message ExchangeCodeResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  int64 expires_in = 3;
+}
+
+message GetUserRequest {
+  string access_token = 1;
+}
+
+message GetUserResponse {
+  LinkedInUser user = 1;
+}
