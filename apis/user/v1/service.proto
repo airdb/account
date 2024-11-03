@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package user.airdb.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "validate/validate.proto";
+import "user/v1/data.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "account/gen/go/airdb/v1;airdbv1";
+option java_multiple_files = true;
+option java_outer_classname = "AirdbUserServiceProto";
+option java_package = "com.airdb.user.v1";
+
+// Add these message definitions before the service definition
+message GetAirdbUserInfoRequest {
+    string user_id = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+message GetAirdbUserInfoResponse {
+    user.airdb.v1.WechatUserInfo user = 1;
+}
+
+message GetAirdbAccessTokenRequest {
+    string user_id = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+message GetAirdbAccessTokenResponse {
+    string access_token = 1;
+    int64 expires_in = 2;
+}
+
+service AirdbUserService {
+    rpc GetAirdbUserInfo(GetAirdbUserInfoRequest) returns (GetAirdbUserInfoResponse) {}
+    rpc GetAirdbAccessToken(GetAirdbAccessTokenRequest) returns (GetAirdbAccessTokenResponse) {}
+}
