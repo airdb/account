@@ -6,6 +6,7 @@ tasks:
     silent: true
     cmds:
       - echo "Welcome to use go-task!"
+      - echo
       - |
         echo "Available tasks:"
         task --list | awk 'NR>1 {print "  " $0}'
