@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  default:
+    desc: Show help messages
+    silent: true
+    cmds:
+      - echo "Welcome to use go-task!"
+      - |
+        echo "Available tasks:"
+        task --list | awk 'NR>1 {print "  " $0}'
+
+  gen:
+    desc: Generate code
+    cmds:
+      - buf generate
+
+  push:
+    desc: Push to buf registry
+    cmds:
+      - buf push
+
+  update:
+    desc: Update dependencies
+    cmds:
+      - buf dep update 
